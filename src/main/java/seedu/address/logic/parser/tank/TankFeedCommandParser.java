@@ -23,7 +23,7 @@ public class TankFeedCommandParser implements Parser<TankFeedCommand> {
             return new TankFeedCommand(index);
         } catch (ParseException pe) {
             throw new ParseException(
-                    String.format(Messages.MESSAGE_INVALID_COMMAND_FORMAT, TankFeedCommand.MESSAGE_USAGE), pe);
+                    String.format("%s\n%s", pe.getMessage(), TankFeedCommand.MESSAGE_USAGE), pe);
         }
     }
 

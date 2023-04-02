@@ -3,6 +3,7 @@ package seedu.address.logic.parser.tank;
 import seedu.address.commons.core.Messages;
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.tank.TankDeleteCommand;
+import seedu.address.logic.commands.tank.TankFeedCommand;
 import seedu.address.logic.parser.Parser;
 import seedu.address.logic.parser.ParserUtil;
 import seedu.address.logic.parser.exceptions.ParseException;
@@ -23,7 +24,7 @@ public class TankDeleteCommandParser implements Parser<TankDeleteCommand> {
             return new TankDeleteCommand(index);
         } catch (ParseException pe) {
             throw new ParseException(
-                    String.format(Messages.MESSAGE_INVALID_COMMAND_FORMAT, TankDeleteCommand.MESSAGE_USAGE), pe);
+                    String.format("%s\n%s", pe.getMessage(), TankDeleteCommand.MESSAGE_USAGE), pe);
         }
     }
 
