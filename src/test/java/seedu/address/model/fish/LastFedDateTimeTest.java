@@ -22,19 +22,19 @@ public class LastFedDateTimeTest {
     @Test
     public void isValidLastFedDate() {
         // null date
-        assertThrows(NullPointerException.class, () -> LastFedDateTime.isValidLastFedDateTime(null));
+        assertThrows(NullPointerException.class, () -> LastFedDateTime.isValidDateTime(null));
 
         // invalid date
-        assertFalse(LastFedDateTime.isValidLastFedDateTime("")); // empty string
-        assertFalse(LastFedDateTime.isValidLastFedDateTime(" ")); // spaces only
-        assertFalse(LastFedDateTime.isValidLastFedDateTime("91")); // less than 3 numbers
-        assertFalse(LastFedDateTime.isValidLastFedDateTime("01.01.2000 00:00")); // format is dd/mm/yyyy
-        assertFalse(LastFedDateTime.isValidLastFedDateTime("1a/05/2000 00:00")); // alphabets within digits
-        assertFalse(LastFedDateTime.isValidLastFedDateTime("32/01/2023 00:00")); // invalid date
+        assertFalse(LastFedDateTime.isValidDateTime("")); // empty string
+        assertFalse(LastFedDateTime.isValidDateTime(" ")); // spaces only
+        assertFalse(LastFedDateTime.isValidDateTime("91")); // less than 3 numbers
+        assertFalse(LastFedDateTime.isValidDateTime("01.01.2000 00:00")); // format is dd/mm/yyyy
+        assertFalse(LastFedDateTime.isValidDateTime("1a/05/2000 00:00")); // alphabets within digits
+        assertFalse(LastFedDateTime.isValidDateTime("32/01/2023 00:00")); // invalid date
 
         // valid dates
-        assertTrue(LastFedDateTime.isValidLastFedDateTime("12/12/2000 00:00")); // exactly 3 numbers
-        assertTrue(LastFedDateTime.isValidLastFedDateTime("05/05/2022 00:00"));
-        assertTrue(LastFedDateTime.isValidLastFedDateTime("06/05/2021 00:00"));
+        assertTrue(LastFedDateTime.isValidDateTime("12/12/2000 00:00")); // exactly 3 numbers
+        assertTrue(LastFedDateTime.isValidDateTime("05/05/2022 00:00"));
+        assertTrue(LastFedDateTime.isValidDateTime("06/05/2021 00:00"));
     }
 }

@@ -1,7 +1,9 @@
 package seedu.address.logic.parser;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.address.commons.util.AppUtil.checkArgument;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -74,9 +76,12 @@ public class ParserUtil {
         requireNonNull(lastFedDate);
         String trimmedLastFedDate = lastFedDate.trim();
         System.out.println(trimmedLastFedDate);
-        if (!LastFedDateTime.isValidLastFedDateTime(trimmedLastFedDate)) {
+        if (!LastFedDateTime.isValidDateTime(trimmedLastFedDate)) {
             throw new ParseException(LastFedDateTime.MESSAGE_CONSTRAINTS);
         }
+        if(!LastFedDateTime.isNotFuture(trimmedLastFedDate)) {
+            throw new ParseException(LastFedDateTime.MESSAGE_CONSTRAINTS_NOT_FUTURE);
+        };
         return new LastFedDateTime(trimmedLastFedDate);
     }
 

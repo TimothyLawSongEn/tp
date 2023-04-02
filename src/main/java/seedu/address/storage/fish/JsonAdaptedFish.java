@@ -91,7 +91,7 @@ public class JsonAdaptedFish {
             throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, LastFedDateTime.class
                     .getSimpleName()));
         }
-        if (!LastFedDateTime.isValidLastFedDateTime(lastFedDateTime)) {
+        if (!LastFedDateTime.isValidDateTime(lastFedDateTime)) {
             throw new IllegalValueException(LastFedDateTime.MESSAGE_CONSTRAINTS);
         }
         final LastFedDateTime modelLastFedDateTime = new LastFedDateTime(lastFedDateTime);
