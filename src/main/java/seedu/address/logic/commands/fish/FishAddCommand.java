@@ -22,10 +22,10 @@ public class FishAddCommand extends FishCommand {
     public static final String FISH_COMMAND_WORD = "add";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + " " + FISH_COMMAND_WORD
-            + ": Adds a fish to the address book.\n"
+            + ": Adds a fish to Fish Ahoy!\n"
             + "Parameters: "
             + PREFIX_NAME + "NAME "
-            + PREFIX_LAST_FED_DATE + "LAST FED DATE "
+            + PREFIX_LAST_FED_DATE + "LAST FED DATE-TIME "
             + PREFIX_SPECIES + "SPECIES "
             + PREFIX_FEEDING_INTERVAL + "FEEDING INTERVAL "
             + PREFIX_TANK + "TANK INDEX"

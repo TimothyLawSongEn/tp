@@ -11,7 +11,7 @@ import seedu.address.model.Model;
 public abstract class FishCommand extends Command {
     public static final String COMMAND_WORD = "fish";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + "<fish command word>\n"
+    public static final String MESSAGE_USAGE = COMMAND_WORD + " <fish command word>\n"
             + "Fish commands: add, "
             + "delete, "
             + "view, "
