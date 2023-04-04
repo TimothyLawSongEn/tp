@@ -8,6 +8,7 @@ import java.util.stream.Stream;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.fish.FishEditCommand;
+import seedu.address.logic.commands.tank.TankCommand;
 import seedu.address.logic.commands.tank.TankEditCommand;
 import seedu.address.logic.commands.tank.TankFeedCommand;
 import seedu.address.logic.parser.ArgumentMultimap;
@@ -36,7 +37,9 @@ public class TankEditCommandParser {
         try {
             index = ParserUtil.parseIndex(argMultimap.getPreamble());
         } catch (ParseException pe) {
-            throw new ParseException(String.format("%s\n%s", pe.getMessage(), TankEditCommand.MESSAGE_USAGE), pe);
+            throw new ParseException(
+                    String.format("%s %s\n%s", TankCommand.COMMAND_WORD, pe.getMessage(), TankEditCommand.MESSAGE_USAGE),
+                    pe);
         }
 
         TankEditCommand.EditTankDescriptor editTankDescriptor = new TankEditCommand.EditTankDescriptor();

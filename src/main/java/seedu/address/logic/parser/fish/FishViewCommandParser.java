@@ -2,6 +2,7 @@ package seedu.address.logic.parser.fish;
 
 import seedu.address.commons.core.Messages;
 import seedu.address.commons.core.index.Index;
+import seedu.address.logic.commands.fish.FishCommand;
 import seedu.address.logic.commands.fish.FishViewCommand;
 import seedu.address.logic.parser.Parser;
 import seedu.address.logic.parser.ParserUtil;
@@ -23,7 +24,7 @@ public class FishViewCommandParser implements Parser<FishViewCommand> {
             return new FishViewCommand(index);
         } catch (ParseException pe) {
             throw new ParseException(
-                    String.format("%s\n%s", pe.getMessage(), FishViewCommand.MESSAGE_USAGE), pe);
+                    String.format("%s %s\n%s", FishCommand.COMMAND_WORD, pe.getMessage(), FishViewCommand.MESSAGE_USAGE), pe);
         }
     }
 

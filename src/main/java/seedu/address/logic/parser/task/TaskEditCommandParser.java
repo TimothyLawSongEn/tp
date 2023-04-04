@@ -7,6 +7,8 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_PRIORITY;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TANK;
 
 import seedu.address.commons.core.index.Index;
+import seedu.address.logic.commands.task.TaskCommand;
+import seedu.address.logic.commands.task.TaskDeleteCommand;
 import seedu.address.logic.commands.task.TaskEditCommand;
 import seedu.address.logic.commands.task.TaskEditCommand.EditTaskDescriptor;
 import seedu.address.logic.parser.ArgumentMultimap;
@@ -33,7 +35,9 @@ public class TaskEditCommandParser {
         try {
             index = ParserUtil.parseIndex(argMultimap.getPreamble());
         } catch (ParseException pe) {
-            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, TaskEditCommand.MESSAGE_USAGE), pe);
+            throw new ParseException(
+                    String.format("%s %s\n%s", TaskCommand.COMMAND_WORD, pe.getMessage(), TaskEditCommand.MESSAGE_USAGE),
+                    pe);
         }
 
         EditTaskDescriptor editTaskDescriptor = new EditTaskDescriptor();

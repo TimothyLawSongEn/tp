@@ -15,6 +15,7 @@ import java.util.Optional;
 import java.util.Set;
 
 import seedu.address.commons.core.index.Index;
+import seedu.address.logic.commands.fish.FishCommand;
 import seedu.address.logic.commands.fish.FishEditCommand;
 import seedu.address.logic.commands.fish.FishEditCommand.EditFishDescriptor;
 import seedu.address.logic.parser.ArgumentMultimap;
@@ -46,7 +47,9 @@ public class FishEditCommandParser implements Parser<FishEditCommand> {
         try {
             index = ParserUtil.parseIndex(argMultimap.getPreamble());
         } catch (ParseException pe) {
-            throw new ParseException(String.format("%s\n%s", pe.getMessage(), FishEditCommand.MESSAGE_USAGE), pe);
+            throw new ParseException(
+                    String.format("%s %s\n%s", FishCommand.COMMAND_WORD, pe.getMessage(), FishEditCommand.MESSAGE_USAGE),
+                    pe);
         }
 
         EditFishDescriptor editFishDescriptor = new EditFishDescriptor();
