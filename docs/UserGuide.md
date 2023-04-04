@@ -6,8 +6,13 @@ title: User Guide
 <img src="images/logo_UG.png" width="300">
 </p>
 
+--------------------------------------------------------------------------------------------------------------------
+
+
 # Table of Contents
   * [Introduction](#introduction)
+  * [Using this guide](#using-this-guide)
+  * [Glossary](#glossary)
   * [Quickstart](#quick-start)
   * [Features](#features)
     * [Tanks](#tanks)
@@ -51,30 +56,81 @@ Line Interface** (CLI) while still having the benefits of a Graphical User Inter
 *Fish Ahoy!* **simplifies** commands to revolve around **fish**, **tank** and **task**. When you want to, for example,
 perform an action on **tanks**, the commands all begin with `tank`.
 
-Choose a feature from our table of contents above to find answers and get step-by-step instructions on how to make 
-*Fish Ahoy!* work for you! Else, follow our [Quick Start Guide](#quick-start) below to get started.
+--------------------------------------------------------------------------------------------------------------------
 
-This guide will explain how you can use *Fish Ahoy!* for your own fish keeping activities. It is designed to 
-cater to all levels of fish keeping expertise, from novice to expert fish keepers. It does not assume any prior 
-knowledge of fish keeping, only the simplest components of an aquarium such as a tank, fish, and basic fish keeping 
+# Using this guide
+
+This guide will explain how you can use *Fish Ahoy!* for your own fish keeping activities. It is designed to
+cater to all levels of fish keeping expertise, from novice to expert fish keepers. It does not assume any prior
+knowledge of fish keeping, only the simplest components of an aquarium such as a tank, fish, and basic fish keeping
 equipment.
+
+For **new users**, follow our [Quick Start Guide](#quick-start) below to get started with your fish-keeping journey with *Fish Ahoy!*.
+
+For **amateur users**, choose a feature from our [table of contents](#table-of-contents) above to find answers and get step-by-step instructions on how to make
+*Fish Ahoy!* work for you!
+
+For **experienced users**, refer to our [command summary](#command-summary) or [prefix summary](#command-prefix-summary) to obtain information you might need at a glance.
+
+These are the symbols employed in this user guide:
+
+| Symbol               | Meaning                |
+|----------------------|------------------------|
+| :information_source: | Additional information |
+| :bulb:               | Helpful tip            |
+| :exclamation:        | Warning                |
+
+> :information_source: Additional information: These symbols will be housed in blockquotes like this
+
+These are the special text formatting employed in this user guide: 
+
+| Font         | Meaning                                                                                                                                                                           |
+|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Bold**     | You should pay closer attention to bolded words as they are more important                                                                                                        |
+| `Code`       | Used for coding syntax. Parts of a *Fish Ahoy!* command will be in this format. Command Prompt commands and file names in the [Quick start](#quick-start) are also in this format |
+| [Links]()    | A link to a section in this user guide that will provide more in-depth information                                                                                                |
+| *Italics*    | The application name, *Fish Ahoy!* is in this format.                                                                                                                             |
+
+--------------------------------------------------------------------------------------------------------------------
+
+# Glossary
+
+These are the definitions to some technical terms: 
+
+| Word           | Meaning                                                                                                                                                                                                 |
+|----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Command        | A series of words you type in the [Command Line](#about-the-interface) to perform an action                                                                                                             |
+| Command type   | Identifies the type of information the command modifies. <br> Command types: `tank`, `fish`, `task`                                                                                                     |
+| Parameter      | Part of a command. Provides the command the information it requires. Parameters are preceded with a prefix.                                                                                             |
+| Prefix         | Part of a parameter. Specifies what type of information the parameter is providing. <br> [Prefixes:](#command-prefix-summary) `n/`, `lfd/`, `s/`, `fi/`, `tg/`, `by/`, `d/`, `al/`, `ph/`, `tp/`, `tk/` |
+| GUI/ Interface | The visual and graphical components of *Fish Ahoy!* It is what you see when you open *Fish Ahoy!*                                                                                                       |
 
 --------------------------------------------------------------------------------------------------------------------
 
 # Quick start
 
-1. Ensure you have Java 11 or above installed in your Computer.
-2. Download the latest FishAhoy.jar from [here](https://github.com/AY2223S2-CS2103T-T17-4/tp/releases).
-3. Copy the file to the folder you want to use as the home folder for Fish Ahoy!.
-4. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar FishAhoy.jar` command to run the application.
+1. Ensure you have [Java 11](https://www.oracle.com/sg/java/technologies/javase/jdk11-archive-downloads.html) or above installed in your Computer.
+
+> :bulb: Tip: You can check by typing `java --version` in your Command Prompt for Windows or Terminal App for macOS
+
+2. Download the latest `FishAhoy.jar` from [here](https://github.com/AY2223S2-CS2103T-T17-4/tp/releases).
+3. Copy the file `FishAhoy.jar` to the folder you want to use as the home folder for *Fish Ahoy!*.
+
+> :information_source: Additional information: Data files of *Fish Ahoy!* will be also stored in the folder you keep it in.
+
+4. Double-click the file to open *Fish Ahoy!* 
 
 A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.
 
 ![Ui](images/Ui.png)
 
+> :bulb: Tip: There is sample data present when you first open *Fish Ahoy!*. Use `edit` or `delete` commands to show your own tanks! 
+
 5. Type a command in the command box and press Enter to execute it.
    Some examples:
-  * `fish add n/bobby lfd/01/01/2023 s/guppy fi/0d5h tk/1`: Add a fish to your fish book.
+  * `fish add n/Bobby lfd/01/01/2023 15:00 s/Guppy fi/0d5h tk/1`: Add a fish named Bobby to your fish book. Its last fed date, species, feeding interval and tank are specified with the `lfd/`, `s/`, `fi/` and `tk/` prefixes respectively.
+  * `fish delete 1`: Deletes the first fish shown in the [centre panel of the interface](#about-the-interface).
+  * `tank view 1`: View all fishes and tasks regarding the first tank in the [left panel of the interface](#about-the-interface).
 
 
 6. Refer to [About the Interface](#about-the-interface) below for details on the interface.
@@ -241,7 +297,7 @@ Adds a fish to *Fish Ahoy!* .
 Use this command to add fishes to tanks. By adding fish in tanks that you own, you can easily categorise them and store
 important information about them.
 
-Format: `add fish n/<FISH_NAME> lfd/<LAST_FED_DATE> s/<SPECIES> fi/<FEEDING_INTERVAL> tk/<TANK_INDEX> [tg/<TAG>]`
+Format: `fish add n/<FISH_NAME> lfd/<LAST_FED_DATE> s/<SPECIES> fi/<FEEDING_INTERVAL> tk/<TANK_INDEX> [tg/<TAG>]`
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
 A fish must belong to a tank.
@@ -261,7 +317,7 @@ Optional Prefixes:
 
 Deletes a fish entry from *Fish Ahoy!* .
 
-Use this command when you want to move a fish from one tank to another, or remove it entirely. 
+Use this command when you want to remove a fish from a tank. 
 
 Format: `fish delete <FISH_INDEX>`
 
@@ -274,6 +330,13 @@ has not been fed in a long time, or see which fish you need to attend to first. 
 results to your liking.  
 
 Format: `fish sort by/<ATTRIBUTE> [tk/<TANK_INDEX>]`
+
+<div markdown="span" class="alert alert-warning">:exclamation: **Note:**
+After sorting, a new set of indexes will appear for each fish. The fish operations will take place on the
+**new fish list**!
+Also, note that fish sort only sorts the fishes that are present! `fish view` would result in only 1 fish being present, 
+and `fish sort` after will not show more fish. Use `list fishes` instead.
+</div>
 
 Prefixes:
 * `by/` - Specifies attribute by which to sort fish. Possible attributes:
@@ -345,7 +408,7 @@ Lists all tasks created.
 
 Use this command to list all tasks.
 
-Format: `list task`
+Format: `list tasks`
 
 ### Feeding reminders
 
@@ -432,18 +495,16 @@ Format: `help`
 
 ## Command prefix summary
 
-| Type     | Attribute                 | Prefix   |
-|----------|---------------------------|----------|
-| Fish     | **Name**                  | **n/**   |
-| Fish     | **Last fed date**         | **lfd/** |
-| **Fish** | **Species**               | **s/**   |
-| **Fish** | **Feeding Interval**      | **fi/**  |
-| **Fish** | **Tag**                   | **tg/**  |
-| **Fish** | **Sorting**               | **by/**  |
-| **Tank** | **Description**           | **d/**   |
-| **Tank** | **Ammonia level reading** | **al/**  |
-| **Tank** | **PH reading**            | **ph/**  |
-| **Tank** | **Temperature reading**   | **tp/**  |
-| **All**  | **Tank**                  | **tk/**  |
-
-[]: #listing-tanks-list-tank
+| Type              | Attribute                 | Prefix   |
+|-------------------|---------------------------|----------|
+| **Fish**          | **Name**                  | **n/**   |
+| **Fish**          | **Last fed date**         | **lfd/** |
+| **Fish**          | **Species**               | **s/**   |
+| **Fish**          | **Feeding Interval**      | **fi/**  |
+| **Fish**          | **Tag**                   | **tg/**  |
+| **Fish**          | **Sorting**               | **by/**  |
+| **Tank**/**Task** | **Description**           | **d/**   |
+| **Tank**          | **Ammonia level reading** | **al/**  |
+| **Tank**          | **PH reading**            | **ph/**  |
+| **Tank**          | **Temperature reading**   | **tp/**  |
+| **All**           | **Tank**                  | **tk/**  |
