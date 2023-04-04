@@ -1,9 +1,7 @@
 package seedu.address.logic.parser.tank;
 
-import seedu.address.commons.core.Messages;
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.tank.TankCommand;
-import seedu.address.logic.commands.tank.TankFeedCommand;
 import seedu.address.logic.commands.tank.TankViewCommand;
 import seedu.address.logic.parser.Parser;
 import seedu.address.logic.parser.ParserUtil;
@@ -25,7 +23,9 @@ public class TankViewCommandParser implements Parser<TankViewCommand> {
             return new TankViewCommand(index);
         } catch (ParseException pe) {
             throw new ParseException(
-                    String.format("%s %s\n%s", TankCommand.COMMAND_WORD, pe.getMessage(), TankViewCommand.MESSAGE_USAGE), pe);
+                    String.format("%s %s\n%s", TankCommand.COMMAND_WORD,
+                            pe.getMessage(), TankViewCommand.MESSAGE_USAGE),
+                    pe);
         }
     }
 

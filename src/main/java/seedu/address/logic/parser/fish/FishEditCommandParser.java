@@ -1,7 +1,6 @@
 package seedu.address.logic.parser.fish;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_FEEDING_INTERVAL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_LAST_FED_DATE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
@@ -48,7 +47,8 @@ public class FishEditCommandParser implements Parser<FishEditCommand> {
             index = ParserUtil.parseIndex(argMultimap.getPreamble());
         } catch (ParseException pe) {
             throw new ParseException(
-                    String.format("%s %s\n%s", FishCommand.COMMAND_WORD, pe.getMessage(), FishEditCommand.MESSAGE_USAGE),
+                    String.format("%s %s\n%s", FishCommand.COMMAND_WORD,
+                            pe.getMessage(), FishEditCommand.MESSAGE_USAGE),
                     pe);
         }
 

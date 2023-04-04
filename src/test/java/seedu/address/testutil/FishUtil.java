@@ -12,6 +12,7 @@ import java.util.Set;
 
 import seedu.address.logic.commands.AddCommand;
 import seedu.address.logic.commands.EditCommand.EditFishDescriptor;
+import seedu.address.logic.commands.fish.FishCommand;
 import seedu.address.model.fish.Fish;
 import seedu.address.model.tag.Tag;
 
@@ -24,7 +25,7 @@ public class FishUtil {
      * Returns an add command string for adding the {@code fish}.
      */
     public static String getAddCommand(Fish fish) {
-        return AddCommand.COMMAND_WORD + " " + getFishDetails(fish);
+        return FishCommand.COMMAND_WORD + " " + AddCommand.COMMAND_WORD + " " + getFishDetails(fish);
     }
 
     /**

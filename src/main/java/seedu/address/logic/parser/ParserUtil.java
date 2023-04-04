@@ -1,9 +1,7 @@
 package seedu.address.logic.parser;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.commons.util.AppUtil.checkArgument;
 
-import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -33,7 +31,8 @@ public class ParserUtil {
 
     public static final String MESSAGE_INVALID_INDEX = "Index invalid. Index must be a positive integer.";
 
-    public static final String MESSAGE_EMPTY_INDEX = "Index not provided. Index must be provided as a positive integer.";
+    public static final String MESSAGE_EMPTY_INDEX =
+            "Index not provided. Index must be provided as a positive integer.";
 
     /**
      * Parses {@code oneBasedIndex} into an {@code Index} and returns it. Leading and trailing whitespaces will be
@@ -75,13 +74,12 @@ public class ParserUtil {
     public static LastFedDateTime parseLastFedDate(String lastFedDate) throws ParseException {
         requireNonNull(lastFedDate);
         String trimmedLastFedDate = lastFedDate.trim();
-        System.out.println(trimmedLastFedDate);
         if (!LastFedDateTime.isValidDateTime(trimmedLastFedDate)) {
             throw new ParseException(LastFedDateTime.MESSAGE_CONSTRAINTS);
         }
-        if(!LastFedDateTime.isNotFuture(trimmedLastFedDate)) {
+        if (!LastFedDateTime.isNotFuture(trimmedLastFedDate)) {
             throw new ParseException(LastFedDateTime.MESSAGE_CONSTRAINTS_NOT_FUTURE);
-        };
+        }
         return new LastFedDateTime(trimmedLastFedDate);
     }
 

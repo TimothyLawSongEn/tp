@@ -11,8 +11,8 @@ import seedu.address.model.Model;
 public abstract class TankCommand extends Command {
     public static final String COMMAND_WORD = "tank";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + "<tank command word>\n"
-            + "Tank commands: add, "
+    public static final String MESSAGE_USAGE = COMMAND_WORD + " <tank command>\n"
+            + "Tank command: add, "
             + "delete, "
             + "view, "
             + "addReadings, "

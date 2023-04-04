@@ -13,8 +13,6 @@ import java.util.stream.Stream;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.fish.FishAddCommand;
-import seedu.address.logic.commands.fish.FishCommand;
-import seedu.address.logic.commands.fish.FishEditCommand;
 import seedu.address.logic.commands.tank.TankCommand;
 import seedu.address.logic.parser.ArgumentMultimap;
 import seedu.address.logic.parser.ArgumentTokenizer;

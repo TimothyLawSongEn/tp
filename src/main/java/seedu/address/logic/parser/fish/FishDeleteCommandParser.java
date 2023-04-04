@@ -1,7 +1,5 @@
 package seedu.address.logic.parser.fish;
 
-import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.fish.FishCommand;
 import seedu.address.logic.commands.fish.FishDeleteCommand;
@@ -24,7 +22,9 @@ public class FishDeleteCommandParser {
             return new FishDeleteCommand(index);
         } catch (ParseException pe) {
             throw new ParseException(
-                    String.format("%s %s\n%s", FishCommand.COMMAND_WORD, pe.getMessage(), FishDeleteCommand.MESSAGE_USAGE), pe);
+                    String.format("%s %s\n%s", FishCommand.COMMAND_WORD,
+                            pe.getMessage(), FishDeleteCommand.MESSAGE_USAGE),
+                    pe);
         }
     }
 

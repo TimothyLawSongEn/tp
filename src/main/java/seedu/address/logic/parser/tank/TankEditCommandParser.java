@@ -1,7 +1,6 @@
 package seedu.address.logic.parser.tank;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
 
 import java.util.stream.Stream;
@@ -10,7 +9,6 @@ import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.fish.FishEditCommand;
 import seedu.address.logic.commands.tank.TankCommand;
 import seedu.address.logic.commands.tank.TankEditCommand;
-import seedu.address.logic.commands.tank.TankFeedCommand;
 import seedu.address.logic.parser.ArgumentMultimap;
 import seedu.address.logic.parser.ArgumentTokenizer;
 import seedu.address.logic.parser.ParserUtil;
@@ -38,7 +36,8 @@ public class TankEditCommandParser {
             index = ParserUtil.parseIndex(argMultimap.getPreamble());
         } catch (ParseException pe) {
             throw new ParseException(
-                    String.format("%s %s\n%s", TankCommand.COMMAND_WORD, pe.getMessage(), TankEditCommand.MESSAGE_USAGE),
+                    String.format("%s %s\n%s", TankCommand.COMMAND_WORD,
+                            pe.getMessage(), TankEditCommand.MESSAGE_USAGE),
                     pe);
         }
 

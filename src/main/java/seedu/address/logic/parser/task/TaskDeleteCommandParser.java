@@ -1,9 +1,6 @@
 package seedu.address.logic.parser.task;
 
-import seedu.address.commons.core.Messages;
 import seedu.address.commons.core.index.Index;
-import seedu.address.logic.commands.tank.TankCommand;
-import seedu.address.logic.commands.tank.TankFeedCommand;
 import seedu.address.logic.commands.task.TaskCommand;
 import seedu.address.logic.commands.task.TaskDeleteCommand;
 import seedu.address.logic.parser.Parser;
@@ -26,7 +23,8 @@ public class TaskDeleteCommandParser implements Parser<TaskDeleteCommand> {
             return new TaskDeleteCommand(index);
         } catch (ParseException pe) {
             throw new ParseException(
-                    String.format("%s %s\n%s", TaskCommand.COMMAND_WORD, pe.getMessage(), TaskDeleteCommand.MESSAGE_USAGE),
+                    String.format("%s %s\n%s", TaskCommand.COMMAND_WORD,
+                            pe.getMessage(), TaskDeleteCommand.MESSAGE_USAGE),
                     pe);
         }
     }

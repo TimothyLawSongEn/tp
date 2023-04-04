@@ -40,7 +40,7 @@ public class FishAddCommand extends FishCommand {
 
     public static final String MESSAGE_SUCCESS = "New fish added: %1$s";
     public static final String MESSAGE_DUPLICATE_FISH = "This fish already exists in the address book";
-    public static final String MESSAGE_MISSING_TANK = "The tank index specified does not exist";
+    public static final String MESSAGE_MISSING_TANK = "Tank index provided does not exist";
 
     private final Fish toAdd;
     private final Index tankIndex;

@@ -5,10 +5,7 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
 import java.util.stream.Stream;
 
 import seedu.address.commons.core.Messages;
-import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.tank.TankAddCommand;
-import seedu.address.logic.commands.tank.TankDeleteCommand;
-import seedu.address.logic.commands.tank.TankFeedCommand;
 import seedu.address.logic.parser.ArgumentMultimap;
 import seedu.address.logic.parser.ArgumentTokenizer;
 import seedu.address.logic.parser.ParserUtil;
