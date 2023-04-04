@@ -23,7 +23,7 @@ public class FishDeleteCommandParser {
             return new FishDeleteCommand(index);
         } catch (ParseException pe) {
             throw new ParseException(
-                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, FishDeleteCommand.MESSAGE_USAGE), pe);
+                    String.format("%s\n%s", pe.getMessage(), FishDeleteCommand.MESSAGE_USAGE), pe);
         }
     }
 

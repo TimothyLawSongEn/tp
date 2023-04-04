@@ -46,7 +46,7 @@ public class FishEditCommandParser implements Parser<FishEditCommand> {
         try {
             index = ParserUtil.parseIndex(argMultimap.getPreamble());
         } catch (ParseException pe) {
-            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, FishEditCommand.MESSAGE_USAGE), pe);
+            throw new ParseException(String.format("%s\n%s", pe.getMessage(), FishEditCommand.MESSAGE_USAGE), pe);
         }
 
         EditFishDescriptor editFishDescriptor = new EditFishDescriptor();

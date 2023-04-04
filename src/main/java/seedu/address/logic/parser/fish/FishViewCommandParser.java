@@ -23,7 +23,7 @@ public class FishViewCommandParser implements Parser<FishViewCommand> {
             return new FishViewCommand(index);
         } catch (ParseException pe) {
             throw new ParseException(
-                    String.format(Messages.MESSAGE_INVALID_COMMAND_FORMAT, FishViewCommand.MESSAGE_USAGE), pe);
+                    String.format("%s\n%s", pe.getMessage(), FishViewCommand.MESSAGE_USAGE), pe);
         }
     }
 
